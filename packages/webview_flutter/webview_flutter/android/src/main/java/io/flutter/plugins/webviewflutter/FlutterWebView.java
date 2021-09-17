@@ -124,6 +124,11 @@ public class FlutterWebView implements PlatformView, MethodCallHandler {
 
     platformThreadHandler = new Handler(context.getMainLooper());
 
+    // Allow zoom.
+    webView.getSettings().setBuiltInZoomControls(true);
+    // Hide buttons.
+    webView.getSettings().setDisplayZoomControls(false);
+
     this.methodChannel = methodChannel;
     this.methodChannel.setMethodCallHandler(this);
 
